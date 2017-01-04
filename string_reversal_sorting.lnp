@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"Main.obj",
+".\XBANKING.obj" 
+TO "string_reversal_sorting" 

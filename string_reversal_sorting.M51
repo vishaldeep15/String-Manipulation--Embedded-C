@@ -1,0 +1,327 @@
+BL51 BANKED LINKER/LOCATER V5.11                                                        01/03/2017  18:44:01  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.11, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, Main.obj, .\XBANKING.obj TO string_reversal_sorting
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  Main.obj (MAIN)
+  .\XBANKING.obj (?C?XBANKING)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL\C51\LIB\C51S.LIB (TOLOWER)
+  C:\KEIL\C51\LIB\C51S.LIB (GETS)
+  C:\KEIL\C51\LIB\C51S.LIB (STRLEN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL\C51\LIB\C51S.LIB (PUTCHAR)
+  C:\KEIL\C51\LIB\C51S.LIB (GETCHAR)
+  C:\KEIL\C51\LIB\C51S.LIB (_GETKEY)
+
+
+LINK MAP OF MODULE:  string_reversal_sorting (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         ?DT?GETCHAR
+                    0009H     0017H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+            BIT     0021H.1   0000H.1   UNIT         ?BI?GETCHAR
+                    0021H.2   0000H.6                *** GAP ***
+            DATA    0022H     0046H     UNIT         _DATA_GROUP_
+            IDATA   0068H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    0B5CH     01B8H     UNIT         ?PR?MAIN?MAIN
+            CODE    0D14H     01B7H     UNIT         ?C?LIB_CODE
+            CODE    0ECBH     009FH     UNIT         ?PR?_GETS?GETS
+            CODE    0F6AH     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    0F91H     0015H     UNIT         ?PR?_STRLEN?STRLEN
+            CODE    0FA6H     0011H     UNIT         ?PR?_TOLOWER?TOLOWER
+            CODE    0FB7H     0011H     UNIT         ?PR?GETCHAR?GETCHAR
+            CODE    0FC8H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0FD4H     000BH     UNIT         ?CO?MAIN
+            CODE    0FDFH     000AH     UNIT         ?PR?_GETKEY?_GETKEY
+
+
+BL51 BANKED LINKER/LOCATER V5.11                                                      01/03/2017  18:44:01  PAGE 2
+
+
+
+OVERLAY MAP OF MODULE:   string_reversal_sorting (?C_STARTUP)
+
+
+SEGMENT                           BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH
+------------------------------------------------------------------
+?C_C51STARTUP                  -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  -----    -----      0022H    0032H
+  +--> ?PR?_GETS?GETS
+  +--> ?CO?MAIN
+  +--> ?PR?PRINTF?PRINTF
+  +--> ?PR?_STRLEN?STRLEN
+  +--> ?PR?_TOLOWER?TOLOWER
+
+?PR?_GETS?GETS                 -----    -----      0054H    0007H
+  +--> ?PR?GETCHAR?GETCHAR
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+?PR?GETCHAR?GETCHAR            -----    -----      -----    -----
+  +--> ?PR?_GETKEY?_GETKEY
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+?PR?PRINTF?PRINTF              0020H.0  0001H.1    0054H    0014H
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+
+
+SYMBOL TABLE OF MODULE:  string_reversal_sorting (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0FC8H         SEGMENT       ?C_C51STARTUP
+  I:0068H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0FCBH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0000H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0FC8H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+BL51 BANKED LINKER/LOCATER V5.11                                                      01/03/2017  18:44:01  PAGE 3
+
+
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         92
+  C:0FC8H         LINE#         99
+  C:0FCAH         LINE#         100
+  C:0FCBH         LINE#         101
+  C:0FCCH         LINE#         102
+  C:0FCEH         LINE#         151
+  C:0FD1H         LINE#         155
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0B5CH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:008DH         PUBLIC        TH1
+  -------         PROC          MAIN
+  -------         DO            
+  D:0022H         SYMBOL        input
+  D:0040H         SYMBOL        word_begin
+  D:0043H         SYMBOL        temp
+  D:0046H         SYMBOL        end
+  D:0007H         SYMBOL        t
+  D:0049H         SYMBOL        next
+  D:0006H         SYMBOL        n
+  D:004CH         SYMBOL        i
+  D:004EH         SYMBOL        j
+  D:0050H         SYMBOL        k
+  D:0052H         SYMBOL        p
+  -------         ENDDO         
+  C:0B5CH         LINE#         7
+  C:0B5CH         LINE#         8
+  C:0B5CH         LINE#         10
+  C:0B65H         LINE#         11
+  C:0B6EH         LINE#         14
+  C:0B73H         LINE#         17
+  C:0B76H         LINE#         18
+  C:0B79H         LINE#         19
+  C:0B7CH         LINE#         20
+  C:0B7FH         LINE#         23
+  C:0B8AH         LINE#         24
+  C:0B9CH         LINE#         26
+  C:0BA5H         LINE#         29
+  C:0BB2H         LINE#         30
+  C:0BB2H         LINE#         31
+  C:0BBAH         LINE#         32
+  C:0BCAH         LINE#         33
+  C:0BCAH         LINE#         34
+  C:0BE7H         LINE#         35
+  C:0BE7H         LINE#         36
+  C:0BF8H         LINE#         37
+  C:0C0AH         LINE#         38
+  C:0C0FH         LINE#         39
+  C:0C0FH         LINE#         41
+BL51 BANKED LINKER/LOCATER V5.11                                                      01/03/2017  18:44:01  PAGE 4
+
+
+  C:0C19H         LINE#         44
+  C:0C27H         LINE#         45
+  C:0C27H         LINE#         46
+  C:0C32H         LINE#         48
+  C:0C3EH         LINE#         49
+  C:0C3EH         LINE#         50
+  C:0C4BH         LINE#         52
+  C:0C5FH         LINE#         53
+  C:0C5FH         LINE#         54
+  C:0C6EH         LINE#         56
+  C:0C7FH         LINE#         57
+  C:0C7FH         LINE#         58
+  C:0CA4H         LINE#         61
+  C:0CA4H         LINE#         62
+  C:0CAEH         LINE#         63
+  C:0CC0H         LINE#         64
+  C:0CCAH         LINE#         65
+  C:0CCAH         LINE#         66
+  C:0CD5H         LINE#         67
+  C:0CD7H         LINE#         68
+  C:0CE2H         LINE#         69
+  C:0CE5H         LINE#         70
+  C:0CF4H         LINE#         71
+  C:0CF4H         LINE#         72
+  C:0CF7H         LINE#         74
+  C:0D02H         LINE#         76
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?XBANKING
+  C:0D14H         SEGMENT       ?C?LIB_CODE
+  C:0D14H         PUBLIC        ?C?CLDXPTR
+  C:0D2FH         PUBLIC        ?C?CSTXPTR
+  C:0D44H         PUBLIC        ?C?ILDXPTR
+  C:0D68H         PUBLIC        ?C?ISTXPTR
+  C:0DCAH         PUBLIC        ?C?LLDXPTR
+  C:0DFCH         PUBLIC        ?C?LSTXPTR
+  C:0D81H         PUBLIC        ?C?PLDXPTR
+  C:0DACH         PUBLIC        ?C?PSTXPTR
+  N:0000H         PUBLIC        ?C?XPAGE1RST
+  D:0094H         PUBLIC        ?C?XPAGE1SFR
+  C:0D22H         SYMBOL        ??0000
+  C:0D3DH         SYMBOL        ??0001
+  C:0D52H         SYMBOL        ??0002
+  C:0D76H         SYMBOL        ??0003
+  C:0D8FH         SYMBOL        ??0004
+  C:0DBAH         SYMBOL        ??0005
+  C:0DD8H         SYMBOL        ??0006
+  C:0E0AH         SYMBOL        ??0007
+  N:0000H         SYMBOL        ?B?SMEM
+  N:0000H         SYMBOL        ?B?TMEM
+  N:0000H         SYMBOL        ?B?UMEM
+  N:0000H         SYMBOL        ?B?VMEM
+  N:0000H         SYMBOL        ?C?XBANKING
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  C:0D29H         SYMBOL        CLDCODE
+BL51 BANKED LINKER/LOCATER V5.11                                                      01/03/2017  18:44:01  PAGE 5
+
+
+  N:0000H         SYMBOL        CMEM
+  C:0D40H         SYMBOL        CSTCODE
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  C:0D5DH         SYMBOL        ILDCODE
+  C:0D7DH         SYMBOL        ISTCODE
+  C:0DE9H         SYMBOL        LLDCODE
+  C:0E17H         SYMBOL        LSTCODE
+  C:0D9DH         SYMBOL        PLDCODE
+  C:0DC6H         SYMBOL        PSTCODE
+  N:0000H         SYMBOL        XMEM
+  -------         ENDMOD        ?C?XBANKING
+
+  -------         MODULE        ?C?CLDPTR
+  C:0E1BH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:0E34H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        PRINTF
+  D:0054H         PUBLIC        ?_PRINTF517?BYTE
+  D:0054H         PUBLIC        ?_PRINTF?BYTE
+  D:0054H         PUBLIC        ?_SPRINTF517?BYTE
+  D:0054H         PUBLIC        ?_SPRINTF?BYTE
+  C:0862H         PUBLIC        _PRINTF
+  C:0862H         PUBLIC        _PRINTF517
+  C:085CH         PUBLIC        _SPRINTF
+  C:085CH         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        TOLOWER
+  C:0FA6H         PUBLIC        _tolower
+  -------         ENDMOD        TOLOWER
+
+  -------         MODULE        GETS
+  C:0ECBH         PUBLIC        _gets
+  -------         ENDMOD        GETS
+
+  -------         MODULE        STRLEN
+  C:0F91H         PUBLIC        _STRLEN
+  -------         ENDMOD        STRLEN
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0E46H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTOPTR
+  C:0E73H         PUBLIC        ?C?CSTOPTR
+  -------         ENDMOD        ?C?CSTOPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:0E95H         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+BL51 BANKED LINKER/LOCATER V5.11                                                      01/03/2017  18:44:01  PAGE 6
+
+
+  C:0EA5H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PUTCHAR
+  C:0F6AH         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+  -------         MODULE        GETCHAR
+  B:0021H.1       PUBLIC        ?C?CHARLOADED
+  D:0008H         PUBLIC        ?_UNGETCHAR?BYTE
+  C:0FB7H         PUBLIC        GETCHAR
+  -------         ENDMOD        GETCHAR
+
+  -------         MODULE        _GETKEY
+  C:0FDFH         PUBLIC        _GETKEY
+  -------         ENDMOD        _GETKEY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 02DEH BYTE (35%) *
+******************************************************************************
+
+Program Size: data=81.2 xdata=0 code=2028
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
