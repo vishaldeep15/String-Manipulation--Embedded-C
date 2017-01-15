@@ -3,44 +3,55 @@
 #include <string.h>
 #include <ctype.h>
 
+void reverse(char input[]);
+void alphabetic_sort(char *input);
 
 void main()
 {
-  char input[30]; // input string
-  char *word_begin = input; //pointer to keep track of beginning of a word
-  char *temp = input, *end; //
-  char t; 
-  char *next;		// to keep track of next character in the string
-  int n,i,j,k=0,p;	// loop counter variables
   
-
+  char input[30]; // input string
+  
   SCON = 0x52; 
   TMOD = 0x20;
   TCON = 0x40;
   TH1 = 0xf3; 
   
-  //printf("Enter String: ");
+  puts("Enter a String: ");
   gets (input, sizeof(input));	// reading input string
-  printf("%s\n", input);		// print the entered string
-  
-  n=strlen(input);    // finding length of string
+  puts(input);		// print the entered string
 
-  // Reversing the words in a String
-  for(i = n; i >= 0; i--)     // outer loop starting from end of the string
+  reverse(input);  // Reversing the words in a String
+  alphabetic_sort(input);  // Alphabetical sorting of the String
+}  
+ 
+
+void reverse(char input[]) {
+	int n,i,j,k=0,p;	// loop counter variables
+
+	n=strlen(input);    // finding length of string
+
+    // Reversing the words in a String
+    for(i = n; i >= 0; i--)     // outer loop starting from end of the string
     {
 	   k++;
        if(input[i-1] == ' ' || i == 0)	// checking for a whitespace or start of string
        {
 	       for( j = i, p = 1; p <= k ; j++, p++)
            {
-               printf("%c",input[j]);	// Printing character in a word
+               putchar(input[j]);	// Printing character in a word
            }
 		   k=0;
-	    }
-		
-    }
- 
-  // Alphabetical sorting of the String
+	   }  
+	}
+}
+
+void alphabetic_sort(char *input) {
+// Alphabetical sorting of the String
+  char *temp = input,*end; 
+  char *word_begin = input; //pointer to keep track of beginning of a word
+  char t; 
+  char *next;		// to keep track of next character in the string
+  
   while( *temp )   
   {
     temp++;
@@ -71,8 +82,6 @@ void main()
     }	
   }
 
-  *temp = '\n';
-	
-  printf("\n%s",input); // Printing the sorted string
+  puts("");	
+  puts(input); // Printing the sorted string
 }
-
